@@ -9,7 +9,7 @@ plot3 <- function() {
   plot(strptime(paste(subset1$Date, subset1$Time, sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(subset1$Sub_metering_1)), type="l", main="", ylab="Energy sub metering", xlab="", col="black");
   lines(strptime(paste(subset1$Date, subset1$Time, sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(subset1$Sub_metering_2)), type="l", main="", ylab="Energy sub metering", xlab="", col="red");
   lines(strptime(paste(subset1$Date, subset1$Time, sep=" "), format="%d/%m/%Y %H:%M:%S"), as.numeric(as.character(subset1$Sub_metering_3)), type="l", main="", ylab="Energy sub metering", xlab="", col="blue");  
-  legend("topright", legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"), cex=0.5, col = 1:3, lty = 1:1);
+  legend("topright", legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"), cex=0.5, col = c("black", "red", "blue"), lty = 1:1);
   dev.copy(png, "plot3.png", width=480, height=480);
   dev.off();
 }
